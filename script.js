@@ -3,7 +3,7 @@ const fileInput = document.querySelector('#file-input');
 
 
 async function loadTrainingData() {
-    const labels = ['Emma Watson', 'Tom Holland', 'Robert Downey Jr', 'Mark Wahlberg']
+    const labels = ['Emma Watson', 'Tom Holland', 'Robert Downey Jr', 'Mark Wahlberg', 'Sơn Tùng MTP']
 
     const faceDescriptors = []
     for (const label of labels) {
