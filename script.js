@@ -9,7 +9,7 @@ async function loadTrainingData() {
     for (const label of labels) {
         const descriptors = []
         for (let i = 1; i <= 25; i++) {
-            const image = await faceapi.fetchImage(`/Face-Detector/data/${label}/${i}.jpeg`)
+            const image = await faceapi.fetchImage(`/data/${label}/${i}.jpeg`)
             const detection = await faceapi.detectSingleFace(image).withFaceLandmarks().withFaceDescriptor()
             descriptors.push(detection.descriptor)
         }
@@ -25,9 +25,9 @@ async function loadTrainingData() {
 let faceMatcher
 async function init() {
     await Promise.all([
-        faceapi.loadSsdMobilenetv1Model('/Face-Detector//models'),
-        faceapi.loadFaceRecognitionModel('/Face-Detector//models'),
-        faceapi.loadFaceLandmarkModel('/Face-Detector//models'),
+        faceapi.loadSsdMobilenetv1Model('/models'),
+        faceapi.loadFaceRecognitionModel('/models'),
+        faceapi.loadFaceLandmarkModel('/models'),
     ])
 
     const trainingData = await loadTrainingData()
