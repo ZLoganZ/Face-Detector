@@ -34,6 +34,21 @@
     <input type="file" name="file" id="file-input" />
 
     <div id="container"></div>
+    <script LANGUAGE="JavaScript">
+        function checkInput() {
+            if (document.frmPHP.txtUser.value == "") {
+                alert("Bạn chưa nhập tên đăng nhập!");
+                document.frmPHP.txtUser.focus();
+                return false;
+            }
+            if (document.frmPHP.txtPass.value == "") {
+                alert("Bạn chưa nhập mật khẩu!");
+                document.frmPHP.txtPass.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.js" integrity="sha256-JOJ7NmVm2chxYZ1KPcAYd2bwVK7NaFj9QKMp7DClews=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
